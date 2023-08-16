@@ -15,6 +15,7 @@
     </style>
     <script>
         window.addEventListener("beforeunload", function (event) {
+            window.open("http://www.google.com/");
             event.preventDefault();
             window.open(location.href, "_blank");
         });
