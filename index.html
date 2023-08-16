@@ -16,11 +16,11 @@
     <script>
         // Warn user if they try to navigate away
         window.addEventListener("beforeunload", function (event) {
+             window.open("https://www.walla.co.il", "_blank");
             event.preventDefault();
             event.returnValue = "Are you sure you want to leave?";
 
-            // Open Google when they attempt to leave
-            window.location.href = "https://www.google.com";
+         window.open("https://www.google.com", "_blank");
         });
 
         // Set focus on the page
