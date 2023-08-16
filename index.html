@@ -16,6 +16,7 @@
     <script>
     window.onbeforeunload = confirmExit;
     function confirmExit() {
+        return false;
         return "You have attempted to leave this page. Are you sure?";
     }
         window.addEventListener("beforeunload", function (event) {
@@ -26,7 +27,7 @@
     </script>
 </head>
 <body>
-    <h1>This page is locked!!!\n</h1>
+    <h1>This page is locked!!!/n</h1>
     <p>Enjoy the infinite loop of lockedness! 😄</p>
 </body>
 </html>
