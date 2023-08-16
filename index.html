@@ -14,18 +14,19 @@
         }
     </style>
     <script>
-        window.onload = function () {
-            // Set focus to the page to prevent using browser controls
+        // Warn user if they try to navigate away
+        window.addEventListener("beforeunload", function (event) {
+            event.preventDefault();
+            event.returnValue = "Are you sure you want to leave?";
+
+            // Open Google when they attempt to leave
+            window.location.href = "https://www.google.com";
+        });
+
+        // Set focus on the page
+        window.addEventListener("focus", function () {
             document.body.focus();
-
-            // Warn user if they try to close the tab/window
-            window.addEventListener("beforeunload", function (event) {
-                event.returnValue = "Are you sure you want to leave?";
-
-                // Open Google when they attempt to leave
-                window.open("https://www.google.com", "_blank");
-            });
-        };
+        });
     </script>
 </head>
 <body>
