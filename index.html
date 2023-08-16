@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locked Page</title>
+    <title>Trapped Page</title>
     <style>
         body {
             display: flex;
@@ -14,24 +14,22 @@
         }
     </style>
     <script>
+        window.onload = function () {
+            // Set focus to the page to prevent using browser controls
+            document.body.focus();
 
-        <script>
-    window.onbeforeunload = confirmExit;
-    function confirmExit() {
-        window.open("http://www.google.com/");
-        return false;
-        return "You have attempted to leave this page. Are you sure?";
-    }
-        window.addEventListener("beforeunload", function (event) {
-            window.open("http://www.google.com/");
-            event.preventDefault();
-            window.open(location.href, "_blank");
-        });
+            // Warn user if they try to close the tab/window
+            window.addEventListener("beforeunload", function (event) {
+                event.returnValue = "Are you sure you want to leave?";
+
+                // Open Google when they attempt to leave
+                window.open("https://www.google.com", "_blank");
+            });
+        };
     </script>
 </head>
 <body>
-    <h1>This page is locked!!</h1>
-    <p>Enjoy the infinite loop of lockedness! 😄</p>
-    <input type="text" id="mytext"/>
+    <h1>Welcome to the Trapped Page!</h1>
+    <p>Try to leave if you dare! 😄</p>
 </body>
 </html>
