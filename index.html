@@ -16,9 +16,6 @@
     <script>
 
         <script>
-function setFocusToTextBox(){
-    document.getElementById("mytext").focus();
-}
     window.onbeforeunload = confirmExit;
     function confirmExit() {
         window.open("http://www.google.com/");
@@ -32,7 +29,7 @@ function setFocusToTextBox(){
         });
     </script>
 </head>
-<body onload='setFocusToTextBox()'>
+<body>
     <h1>This page is locked!!</h1>
     <p>Enjoy the infinite loop of lockedness! 😄</p>
     <input type="text" id="mytext"/>
