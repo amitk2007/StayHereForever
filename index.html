@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locked Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+    <script>
+        window.addEventListener("beforeunload", function (event) {
+            event.preventDefault();
+            window.open(location.href, "_blank");
+        });
+    </script>
+</head>
+<body>
+    <h1>This page is locked!</h1>
+    <p>Enjoy the infinite loop of lockedness! 😄</p>
+</body>
+</html>
